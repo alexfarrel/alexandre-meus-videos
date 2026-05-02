@@ -1,0 +1,508 @@
+/* ============================================================
+   VARIÁVEIS GLOBAIS (Cores, fontes, espaçamentos)
+   Altere aqui para mudar o visual da página inteira
+============================================================ */
+:root {
+  /* Cores principais */
+  --cor-fundo:        #0d1117;   /* fundo da página */
+  --cor-fundo-card:   #141b24;   /* fundo dos cartões/seções */
+  --cor-borda:        #1e2a38;   /* bordas sutis */
+  --cor-texto:        #e2e8f0;   /* texto principal */
+  --cor-texto-muted:  #7a8fa6;   /* texto secundário/suave */
+  --cor-destaque:     #2dd4bf;   /* ciano — cor de destaque (links, badge) */
+  --cor-destaque-bg:  rgba(45, 212, 191, 0.08); /* fundo sutil do destaque */
+
+  /* Tipografia */
+  --fonte-titulo:  'Space Grotesk', sans-serif;
+  --fonte-texto:   'Inter', sans-serif;
+
+  /* Espaçamentos */
+  --raio:          12px;   /* border-radius padrão */
+  --raio-grande:   20px;   /* border-radius maior */
+
+  /* Largura máxima do conteúdo */
+  --largura-max:   560px;
+}
+
+/* ============================================================
+   RESET E BASE
+============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Scroll suave ao clicar em âncoras */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  font-size: 15px;
+  line-height: 1.6;
+  /* Centraliza todo o conteúdo na página */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 16px 48px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ============================================================
+   BARRA DE IDIOMAS
+============================================================ */
+.lang-bar {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 20px 0 12px;
+  width: 100%;
+  max-width: var(--largura-max);
+}
+
+/* Cada botão de idioma */
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cor-texto-muted);
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.2s;
+}
+
+.lang-btn:hover,
+.lang-btn.lang-active {
+  color: var(--cor-texto);
+}
+
+/* Imagem da bandeira */
+.flag {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+
+/* ============================================================
+   BADGE "DISPONÍVEL PARA NOVOS PROJETOS"
+============================================================ */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cor-destaque);
+  background: var(--cor-destaque-bg);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: 999px;   /* pílula */
+  padding: 5px 14px;
+  margin-bottom: 32px;
+}
+
+/* Ponto piscante ao lado do texto */
+.availability-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--cor-destaque);
+  border-radius: 50%;
+  /* Animação de pulso */
+  animation: pulso 2s ease-in-out infinite;
+}
+
+@keyframes pulso {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.3); }
+}
+
+
+/* ============================================================
+   CABEÇALHO DA PÁGINA
+============================================================ */
+.page-header {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin-bottom: 36px;
+}
+
+/* Título principal */
+.page-title {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(28px, 6vw, 38px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+/* Cartão com foto + nome + botão */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-grande);
+  padding: 14px 16px;
+}
+
+/* Foto de perfil */
+.profile-photo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  /* Placeholder cinza caso a imagem não carregue */
+  background: var(--cor-borda);
+}
+
+/* Bloco de nome + bio */
+.profile-info {
+  flex: 1;
+  min-width: 0; /* evita overflow em telas pequenas */
+}
+
+.profile-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.profile-bio {
+  display: block;
+  font-size: 12.5px;
+  color: var(--cor-texto-muted);
+  line-height: 1.45;
+  margin-top: 2px;
+}
+
+/* Botão ícone (ex: mensagem) no cartão de perfil */
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--raio);
+  background: var(--cor-destaque);
+  color: #0d1117;
+  flex-shrink: 0;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.icon-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+
+/* ============================================================
+   CONTEÚDO PRINCIPAL (seções de projeto)
+============================================================ */
+.main-content {
+  width: 100%;
+  max-width: var(--largura-max);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Cada bloco de projeto */
+.project-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Cabeçalho do projeto (logo + handle) */
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Logo SVG da plataforma */
+.platform-logo {
+  color: var(--cor-destaque);
+  flex-shrink: 0;
+}
+
+/* Nome do perfil (@handle) como link */
+.platform-handle {
+  margin-top: -8px;
+  font-family: var(--fonte-texto);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--cor-texto);
+  transition: color 0.2s;
+}
+
+.platform-handle:hover {
+  color: var(--cor-destaque);
+}
+
+/* Cabeçalho do projeto auto-hospedado (empilha nome + sub) */
+.project-header--selfhosted {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.platform-name {
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Sub-link "Video Sales Letter" */
+.platform-handle--sub {
+  font-family: var(--fonte-texto);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--cor-texto-muted);
+}
+
+.platform-handle--sub:hover {
+  color: var(--cor-destaque);
+}
+
+/* Texto descritivo do projeto */
+.project-desc {
+  font-size: 14px;
+  color: var(--cor-texto-muted);
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   GRADES DE VÍDEO
+
+   Mobile  → carrossel horizontal (2 cards visíveis + meio)
+   Desktop → grade 2×2
+============================================================ */
+
+/* Wrapper da grade / carrossel */
+.video-grid {
+  display: grid;
+  /* Desktop: 2 colunas de tamanho igual */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  list-style: none;
+}
+
+/* ---- MOBILE: carrossel ---- */
+@media (max-width: 600px) {
+  .video-grid.carousel {
+    /* Scroll horizontal, sem grid (uma linha) */
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    /* Esconde a scrollbar visualmente */
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+
+  .video-grid.carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .video-grid.carousel .video-item {
+    /* Cada card ocupa ~45% da largura → dois e meio visíveis */
+    flex: 0 0 45%;
+    scroll-snap-align: start;
+  }
+}
+
+
+/* ============================================================
+   ITEM DE VÍDEO + PROPORÇÕES
+============================================================ */
+
+/* Item genérico */
+.video-item {
+  position: relative;
+  border-radius: var(--raio);
+  overflow: hidden;
+  background: var(--cor-borda);
+}
+
+/* Proporção 9:16 (vertical, Reels/Shorts) */
+.ratio-9-16 {
+  aspect-ratio: 9 / 16;
+}
+
+/* Proporção 16:9 (horizontal, VSL) */
+.ratio-16-9 {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+
+/* ============================================================
+   THUMBNAIL DO VÍDEO (antes de clicar em play)
+============================================================ */
+.video-thumb {
+  position: absolute;
+  inset: 0; /* cobre todo o .video-item */
+  background-color: var(--cor-borda);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.25s;
+}
+
+/* Escurece levemente a thumb no hover */
+.video-thumb:hover {
+  filter: brightness(0.8);
+}
+
+/* Quando o iframe já foi carregado, esconde a thumbnail */
+.video-thumb.loaded {
+  display: none;
+}
+
+
+/* ============================================================
+   BOTÃO DE PLAY
+============================================================ */
+.play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  cursor: pointer;
+  pointer-events: none; /* o clique é capturado pelo .video-thumb */
+  transition: background 0.2s, transform 0.15s;
+}
+
+.video-thumb:hover .play-btn {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+/* Versão maior para o vídeo 16:9 */
+.play-btn--large {
+  width: 72px;
+  height: 72px;
+}
+
+
+/* ============================================================
+   IFRAME DO VIMEO (inserido pelo JS ao clicar em play)
+============================================================ */
+.vimeo-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--raio);
+}
+
+
+/* ============================================================
+   RODAPÉ
+============================================================ */
+.site-footer {
+  width: 100%;
+  max-width: var(--largura-max);
+  text-align: center;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Chamada para ação */
+.footer-cta {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(22px, 5vw, 28px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+/* Botão do WhatsApp */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cor-destaque);
+  color: #0d1117;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 999px; /* pílula */
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.whatsapp-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* Linha "Geralmente responde rápido" */
+.footer-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--cor-texto-muted);
+}
+
+/* Copyright */
+.footer-copy {
+  font-size: 12px;
+  color: var(--cor-texto-muted);
+  margin-top: 8px;
+}
+.project-header {
+  display: flex;
+  flex-direction: column; /* empilha vertical */
+  align-items: flex-start;    /* centraliza horizontalmente */
+  gap: 8px;               /* espaço entre svg e texto */
+}
+
+
+/* ============================================================
+   AJUSTES PARA DESKTOP (acima de 601px)
+   No desktop a grade já é 2×2 por padrão (definido acima),
+   aqui fazemos pequenos ajustes extras se necessário.
+============================================================ */
+@media (min-width: 601px) {
+  body {
+    padding: 0 24px 64px;
+  }
+}
