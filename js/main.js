@@ -85,3 +85,55 @@ thumbnails.forEach(function(thumb) {
   });
 
 });
+
+    //Script para trocar a thumb pelo iframe do youtube
+document.addEventListener("DOMContentLoaded", () => {
+  const thumbs = document.querySelectorAll(".video-thumb");
+
+  thumbs.forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      const videoId = thumb.dataset.youtube;
+
+      if (!videoId) return;
+
+      const iframe = document.createElement("iframe");
+      iframe.setAttribute("src", `https://www.youtube.com/embed/${videoId}?autoplay=1`);
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+
+      thumb.replaceWith(iframe);
+    });
+  });
+});
+
+// preload por hover/toque para melhorar a experiência de quem vai assistir aos vídeos (carrega o iframe antes do clique)
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.video-card');
+
+  cards.forEach(card => {
+    let loaded = false;
+
+    function preload() {
+      if (loaded) return;
+
+      const id = card.dataset.id;
+
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://player.vimeo.com/video/${id}`;
+      iframe.style.display = 'none';
+
+      document.body.appendChild(iframe);
+
+      loaded = true;
+    }
+
+    // Desktop (hover)
+    card.addEventListener('mouseenter', preload);
+
+    // Mobile (toque)
+    card.addEventListener('touchstart', preload, { passive: true });
+  });
+});
