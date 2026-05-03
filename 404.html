@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 · Page Not Found — Alexandre Oliveira</title>
+
+  <!-- ============================================================
+       GOOGLE FONTS (same as the rest of the project)
+       Inter = body text
+       Space Grotesk = headings
+  ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main stylesheet (shared with the whole project) -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 404-specific styles — add the contents of 404-additions.css
+       to your style.css if you prefer a single file -->
+  <link rel="stylesheet" href="css/404.css" />
+</head>
+
+<body class="page-404">
+  <!-- ============================================================
+       404 MAIN CONTENT
+  ============================================================ -->
+  <main class="not-found-container" aria-labelledby="erro-titulo">
+
+    <!-- Large decorative "404" number -->
+    <p class="not-found-code" aria-hidden="true">404</p>
+
+    <!-- Glowing play icon — ties the 404 to the video portfolio theme -->
+    <div class="not-found-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="5,3 19,12 5,21"/>
+      </svg>
+    </div>
+
+    <h1 class="not-found-title" id="erro-titulo">
+      This page doesn't exist
+    </h1>
+
+    <p class="not-found-desc">
+      Looks like this video got deleted — or maybe it was never here.<br />
+      Head back and check out the real content.
+    </p>
+
+    <!-- Back to home button — points to /en.html -->
+    <a href="/en.html" class="not-found-btn">
+      <!-- Arrow-left icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"/>
+        <polyline points="12 19 5 12 12 5"/>
+      </svg>
+      Back to home
+    </a>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — copyright only (minimal, same as other pages)
+  ============================================================ -->
+  <footer class="site-footer site-footer--404">
+    <p class="footer-copy">
+      &copy; <span id="ano-atual"></span> Alexandre Oliveira · All rights reserved
+    </p>
+  </footer>
+
+  <!-- Main script (handles the copyright year — same file, no duplication) -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
