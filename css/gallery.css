@@ -1,0 +1,274 @@
+/* ============================================================
+   gallery.css — Estilos da galeria masonry e do popup (lightbox)
+   Importe APÓS o style.css principal no HTML
+============================================================ */
+
+
+/* ------------------------------------------------------------
+   SEÇÃO DE PROJETO (cabeçalho + galeria + texto)
+------------------------------------------------------------ */
+.gallery-project {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* Separação entre projetos */
+  margin-bottom: 40px;
+}
+
+
+/* ------------------------------------------------------------
+   CABEÇALHO DO PROJETO (avatar + nome + @handle)
+------------------------------------------------------------ */
+.gallery-project-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Avatar circular do cliente */
+.client-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--cor-borda);
+  flex-shrink: 0;
+}
+
+.client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.client-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Link do @handle */
+.client-handle {
+  font-size: 12.5px;
+  color: var(--cor-texto-muted);
+  transition: color 0.2s;
+}
+
+.client-handle:hover {
+  color: var(--cor-destaque);
+}
+
+
+/* ------------------------------------------------------------
+   BLOCO DE TEXTO DO PROJETO (descrição + palavras-chave)
+------------------------------------------------------------ */
+.project-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-text {
+  font-size: 13.5px;
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* Botão "mais" / "menos" inline no texto */
+.text-toggle {
+  background: none;
+  border: none;
+  color: var(--cor-destaque);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 2px;
+}
+
+.project-keywords {
+  font-size: 12px;
+  color: var(--cor-texto-muted);
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   GALERIA MASONRY (2 colunas, estilo Pinterest)
+   
+   Usamos CSS Columns para o comportamento masonry nativo.
+   As imagens se encaixam automaticamente na coluna mais curta,
+   criando o efeito "tijolo" sem precisar de JavaScript.
+   
+   O atributo data-ratio no HTML é usado apenas como referência
+   visual para o programador — o CSS columns cuida do layout.
+============================================================ */
+.masonry-grid {
+  /* Duas colunas de largura igual */
+  column-count: 2;
+  column-gap: 8px;
+}
+
+/* Cada item da galeria */
+.masonry-item {
+  /* Evita que o card quebre entre colunas */
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  /* Espaço entre os cards na vertical */
+  margin-bottom: 8px;
+  border-radius: var(--raio);
+  overflow: hidden;
+  /* Para a sobreposição do hover */
+  position: relative;
+  cursor: pointer;
+  background: var(--cor-borda);
+}
+
+/* A imagem ocupa 100% do card */
+.gallery-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Transição suave para o hover */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  /* Garante que a imagem não vaze do card arredondado */
+  border-radius: var(--raio);
+}
+
+/* Efeito hover: escurece e amplia levemente */
+.masonry-item:hover .gallery-img {
+  transform: scale(1.03);
+  filter: brightness(0.75);
+}
+
+/* Overlay com ícone de lupa ao fazer hover */
+.masonry-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Gradiente sutil no canto para indicar clique */
+  background: radial-gradient(circle at center, rgba(45, 212, 191, 0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--raio);
+  pointer-events: none;
+}
+
+.masonry-item:hover::after {
+  opacity: 1;
+}
+
+
+/* ============================================================
+   POPUP / LIGHTBOX
+   
+   Estrutura:
+   - .lightbox           = container geral (ocupa a tela inteira)
+   - .lightbox-backdrop  = fundo escuro e desfocado (clicável para fechar)
+   - .lightbox-content   = a imagem + botão de fechar
+   - .lightbox-close     = botão X circular embaixo da imagem
+============================================================ */
+
+/* Container geral — fica por cima de tudo */
+.lightbox {
+  position: fixed;
+  inset: 0; /* ocupa toda a tela: top/right/bottom/left = 0 */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  /* Animação de entrada */
+  animation: lightbox-entra 0.2s ease;
+}
+
+/* Quando o lightbox está escondido (atributo hidden) não mostra nada */
+.lightbox[hidden] {
+  display: none;
+}
+
+@keyframes lightbox-entra {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Fundo escuro e desfocado — clicar aqui fecha o popup */
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  /* Desfoque do conteúdo atrás do popup */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+/* Conteúdo centralizado por cima do backdrop */
+.lightbox-content {
+  position: relative;
+  z-index: 1; /* fica acima do backdrop */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  /* Limita a largura para não esticar demais em telas grandes */
+  max-width: min(90vw, 480px);
+  max-height: 90vh;
+  /* Animação de escala ao abrir */
+  animation: lightbox-escala 0.25s ease;
+}
+
+@keyframes lightbox-escala {
+  from { transform: scale(0.93); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+/* A imagem em tamanho completo */
+.lightbox-img {
+  display: block;
+  max-width: 100%;
+  /* Garante que a imagem não ultrapasse a altura da tela */
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: var(--raio);
+  /* Sombra para destacar do fundo */
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+/* Botão de fechar — círculo com X embaixo da imagem */
+.lightbox-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  cursor: pointer;
+  /* Transição suave no hover */
+  transition: background 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: scale(1.1);
+}
+
+
+/* ------------------------------------------------------------
+   RESPONSIVO DESKTOP
+   Em telas largas, aumenta um pouco o tamanho máximo do popup
+------------------------------------------------------------ */
+@media (min-width: 601px) {
+  .lightbox-content {
+    max-width: min(85vw, 600px);
+  }
+
+  .lightbox-img {
+    max-height: 80vh;
+  }
+}

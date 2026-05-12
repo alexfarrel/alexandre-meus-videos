@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minhas Imagens — Alexandre Oliveira</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       BARRA DE IDIOMAS
+       Troque o href de cada link pela URL correta de cada versão
+  ============================================================ -->
+  <nav class="lang-bar" aria-label="Seleção de idioma">
+    <!-- Troque o href pelo link da versão em inglês desta página -->
+    <a href="images-en.html" class="lang-btn" lang="en">
+      <img src="images/flags/en.webp" alt="English" class="flag" />
+      English
+    </a>
+    <!-- Troque o href pelo link da versão em espanhol desta página -->
+    <a href="images-es.html" class="lang-btn" lang="es">
+      <img src="images/flags/es.webp" alt="Español" class="flag" />
+      Español
+    </a>
+    <!-- Português está ativo nesta página -->
+    <a href="images-pt.html" class="lang-btn lang-active" lang="pt">
+      <img src="images/flags/pt.webp" alt="Português" class="flag" />
+      Português
+    </a>
+  </nav>
+
+  <!-- ============================================================
+       BADGE + CABEÇALHO
+  ============================================================ -->
+  <div class="availability-badge">
+    <span class="availability-dot" aria-hidden="true"></span>
+    Disponível para novos projetos
+  </div>
+
+  <header class="page-header">
+    <h1 class="page-title">Minhas imagens</h1>
+
+    <!-- Cartão de perfil -->
+    <div class="profile-card">
+      <img
+        src="images/profile.png"
+        alt="Foto de Alexandre Oliveira"
+        class="profile-photo"
+        width="52"
+        height="52"
+        loading="lazy"
+      />
+      <div class="profile-info">
+        <strong class="profile-name">Alexandre Oliveira</strong>
+        <span class="profile-bio">Designer digital, Designer de Produtos (UI), Web e editor de vídeos</span>
+      </div>
+      <!-- Botão de contato — troque o href pelo link desejado -->
+      <a href="#" class="icon-btn" aria-label="Enviar mensagem">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       CONTEÚDO PRINCIPAL — PROJETOS COM GALERIAS
+  ============================================================ -->
+  <main class="main-content">
+
+    <!-- ----------------------------------------------------------
+         PROJETO 1
+         Troque os dados abaixo:
+         - foto do cliente (src do avatar)
+         - nome do cliente e @handle
+         - texto descritivo
+         - palavras-chave
+         - imagens da galeria (src + data-full)
+    ---------------------------------------------------------- -->
+    <section class="gallery-project" aria-labelledby="proj1-titulo">
+
+      <!-- Cabeçalho do projeto: avatar + nome + descrição -->
+      <div class="gallery-project-header">
+        <!-- Avatar do cliente — troque o src -->
+        <img
+          src="https://ik.imagekit.io/vqrugbo5f/port-images/clients/client-dener.jpg"
+          alt="Avatar do cliente"
+          class="client-avatar"
+          width="40"
+          height="40"
+          loading="lazy"
+        />
+        <div class="client-info">
+          <strong class="client-name" id="proj1-titulo">Criativos: Divulgação de Live</strong>
+          <!-- Troque o href pelo link do perfil do cliente -->
+          <a href="https://www.instagram.com/denerzim/" class="client-handle" target="_blank" rel="noopener noreferrer">@denerzim</a>
+        </div>
+      </div>
+
+      <!-- Descrição do projeto com "... mais" expansível -->
+      <div class="project-text-block">
+        <p class="project-text">
+          O Sr. Dener, um influenciador digital de jogos...
+          <!-- Texto que fica escondido antes de clicar em "mais" -->
+          <span class="text-extra" hidden>
+            decidiu lançar uma live e precisava de criativos chamativos para divulgação em suas redes sociais.
+          </span>
+          <button class="text-toggle" aria-expanded="false">mais</button>
+        </p>
+        <p class="project-keywords">
+          <strong>Palavras-chave:</strong> criativos, telegram, live, aviator, redbaron instagram
+        </p>
+      </div>
+
+      <!-- --------------------------------------------------------
+           GALERIA MASONRY (Pinterest-like, 2 colunas)
+           
+           Para adicionar imagens:
+           - src         = caminho da thumbnail (versão menor para carregar rápido)
+           - data-full   = caminho da imagem em tamanho completo (para o popup)
+           - data-ratio  = proporção da imagem: "1-1" | "9-16" | "4-5" | "vertical"
+             Isso ajuda o CSS a reservar o espaço correto antes de carregar
+           - alt         = descrição da imagem (importante para acessibilidade)
+      -------------------------------------------------------- -->
+      <div class="masonry-grid" role="list" aria-label="Galeria de imagens do projeto 1">
+
+        <!-- Imagem 1:1 (quadrada) -->
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/thumb/low---_---proj-img1-2.webp?updatedAt=1778624273389"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/proj-img1-2.webp?updatedAt=1778624289378"
+            alt="Criativo para divulgação de live — imagem 1"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Imagem 9:16 (vertical, estilo Stories/Reels) -->
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/thumb/low---_---proj-img1-1.webp?updatedAt=1778624273375"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/proj-img1-1.webp?updatedAt=1778624289339"
+            alt="Criativo para divulgação de live — imagem 2"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Imagem 4:5 -->
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/thumb/low---_---proj-img1-5.webp?updatedAt=1778624273424"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/proj-img1-5.webp?updatedAt=1778624289352"
+            alt="Criativo para divulgação de live — imagem 3"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Imagem 1:1 -->
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/thumb/low---_---proj-img1-7.webp?updatedAt=1778624273228"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/proj-img1-7.webp?updatedAt=1778624289328"
+            alt="Criativo para divulgação de live — imagem 4"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Imagem vertical (mais alta que 4:5) -->
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/proj-img1-6.webp"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/proj-img1-6.webp"
+            alt="Criativo para divulgação de live — imagem 5"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Imagem 9:16 -->
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/thumb/low---_---proj-img1-3.webp?updatedAt=1778624273486"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img1-dener/proj-img1-3.webp?updatedAt=1778624289343"
+            alt="Criativo para divulgação de live — imagem 6"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Adicione mais imagens seguindo o mesmo padrão acima -->
+
+      </div><!-- /masonry-grid -->
+    </section><!-- /projeto 1 -->
+
+
+    <!-- ----------------------------------------------------------
+         PROJETO 2
+         Siga o mesmo padrão do projeto 1 para adicionar imagens
+    ---------------------------------------------------------- -->
+    <section class="gallery-project" aria-labelledby="proj2-titulo">
+
+      <div class="gallery-project-header">
+        <img
+          src="https://ik.imagekit.io/vqrugbo5f/port-images/clients/client-luis-feijao.jpg"
+          alt="Avatar do cliente"
+          class="client-avatar"
+          width="40"
+          height="40"
+          loading="lazy"
+        />
+        <div class="client-info">
+          <strong class="client-name" id="proj2-titulo">Criativos: Divulgação de Live</strong>
+          <a href="#" class="client-handle" target="_blank" rel="noopener noreferrer">@denerzim</a>
+        </div>
+      </div>
+
+      <div class="project-text-block">
+        <p class="project-text">
+          O Sr. Feijão, dono de uma loja de peças de auto...
+          <span class="text-extra" hidden>
+            precisava de criativos para suas campanhas de divulgação nas redes sociais.
+          </span>
+          <button class="text-toggle" aria-expanded="false">mais</button>
+        </p>
+        <p class="project-keywords">
+          <strong>Palavras-chave:</strong> criativos, telegram, live, aviator, redbaron instagram
+        </p>
+      </div>
+
+      <div class="masonry-grid" role="list" aria-label="Galeria de imagens do projeto 2">
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/thumb/low---_---proj-img2-1.webp?updatedAt=1778626353773"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/proj-img2-1.webp?updatedAt=1778626336137"
+            alt="Criativo projeto 2 — imagem 1"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/thumb/low---_---proj-img2-2.webp?updatedAt=1778626353719"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/proj-img2-2.webp?updatedAt=1778626336303"
+            alt="Criativo projeto 2 — imagem 2"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/thumb/low---_---proj-img2-3.webp?updatedAt=1778626354050"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/proj-img2-3.webp?updatedAt=1778626336192"
+            alt="Criativo projeto 2 — imagem 3"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/thumb/low---_---proj-img2-4.webp?updatedAt=1778626353727"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/proj-img2-4.webp?updatedAt=1778626336248"
+            alt="Criativo projeto 2 — imagem 4"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/thumb/low---_---proj-img2-5.webp?updatedAt=1778626354080"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/proj-img2-5.webp?updatedAt=1778626336298"
+            alt="Criativo projeto 2 — imagem 5"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/thumb/low---_---proj-img2-6.webp?updatedAt=1778626354047"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/proj-img2-6.webp?updatedAt=1778626336359"
+            alt="Criativo projeto 2 — imagem 6"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/thumb/low---_---proj-img2-7.webp?updatedAt=1778626353899"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/proj-img2-7.webp?updatedAt=1778626336415"
+            alt="Criativo projeto 2 — imagem 7"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+                <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/thumb/low---_---proj-img2-8.webp?updatedAt=1778626354361"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/proj-img2-8.webp?updatedAt=1778626336471"
+            alt="Criativo projeto 2 — imagem 8"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+                <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img
+            src="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/thumb/low---_---proj-img2-9.webp?updatedAt=1778626354052"
+            data-full="https://ik.imagekit.io/vqrugbo5f/port-images/proj-img2-feijao/proj-img2-9.webp?updatedAt=1778626336527"
+            alt="Criativo projeto 2 — imagem 9"
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Adicione mais imagens seguindo o mesmo padrão acima -->
+
+      </div>
+    </section><!-- /projeto 2 -->
+
+  </main>
+
+
+  <!-- ============================================================
+       RODAPÉ — CTA + COPYRIGHT
+  ============================================================ -->
+  <footer class="site-footer">
+    <h2 class="footer-cta">
+      Vamos deixar seus vídeos<br />muito mais interessantes?
+    </h2>
+
+    <!-- Troque o href pelo seu link do WhatsApp -->
+    <a href="#" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.105.549 4.082 1.515 5.797L.057 23.882a.5.5 0 0 0 .61.61l6.115-1.593A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.686-.513-5.223-1.41l-.374-.217-3.88 1.01 1.029-3.757-.234-.386A9.955 9.955 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+      Fale comigo no WhatsApp
+    </a>
+
+    <p class="footer-note">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+           viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+      Geralmente responde rápido
+    </p>
+
+    <p class="footer-copy">
+      &copy; <span id="ano-atual"></span> Alexandre Oliveira · Todos os direitos reservados
+    </p>
+  </footer>
+
+  <!-- ============================================================
+       POPUP / LIGHTBOX
+       Esta estrutura fica escondida e aparece ao clicar em uma imagem
+       O JS insere a imagem correta dentro de #lightbox-img
+  ============================================================ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem" hidden>
+    <!-- Fundo escuro e desfocado — clicar aqui fecha o popup -->
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+
+    <!-- Conteúdo do popup -->
+    <div class="lightbox-content">
+      <!-- A imagem em tamanho completo é inserida aqui pelo JS -->
+      <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+
+      <!-- Botão de fechar -->
+      <button class="lightbox-close" id="lightbox-close" aria-label="Fechar imagem">
+        <!-- Ícone X em SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Script do ano do copyright -->
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+  </script>
+  <!-- Script da galeria (masonry + popup) -->
+  <script src="js/gallery.js"></script>
+
+</body>
+</html>

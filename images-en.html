@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Images — Alexandre Oliveira</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       LANGUAGE BAR
+       Replace each href with the correct URL for each version
+  ============================================================ -->
+  <nav class="lang-bar" aria-label="Language selection">
+    <!-- English is active on this page -->
+    <a href="images-en.html" class="lang-btn lang-active" lang="en">
+      <img src="images/flags/en.png" alt="English" class="flag" />
+      English
+    </a>
+    <!-- Replace href with the Spanish version URL -->
+    <a href="images-es.html" class="lang-btn" lang="es">
+      <img src="images/flags/es.png" alt="Español" class="flag" />
+      Español
+    </a>
+    <!-- Replace href with the Portuguese version URL -->
+    <a href="images-pt.html" class="lang-btn" lang="pt">
+      <img src="images/flags/pt.png" alt="Português" class="flag" />
+      Português
+    </a>
+  </nav>
+
+  <div class="availability-badge">
+    <span class="availability-dot" aria-hidden="true"></span>
+    Available for new projects
+  </div>
+
+  <header class="page-header">
+    <h1 class="page-title">My images</h1>
+
+    <div class="profile-card">
+      <img
+        src="images/profile.jpg"
+        alt="Photo of Alexandre Oliveira"
+        class="profile-photo"
+        width="52"
+        height="52"
+        loading="lazy"
+      />
+      <div class="profile-info">
+        <strong class="profile-name">Alexandre Oliveira</strong>
+        <span class="profile-bio">Digital Designer, UI Product Designer, Web &amp; Video Editor</span>
+      </div>
+      <a href="#" class="icon-btn" aria-label="Send message">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ----------------------------------------------------------
+         PROJECT 1
+         Replace the data below:
+         - client avatar (img src)
+         - client name and @handle
+         - description text
+         - keywords
+         - gallery images (src + data-full)
+    ---------------------------------------------------------- -->
+    <section class="gallery-project" aria-labelledby="proj1-title">
+
+      <div class="gallery-project-header">
+        <!-- Replace src with the client avatar -->
+        <img
+          src="images/clients/client1.jpg"
+          alt="Client avatar"
+          class="client-avatar"
+          width="40"
+          height="40"
+          loading="lazy"
+        />
+        <div class="client-info">
+          <strong class="client-name" id="proj1-title">Creatives: Live Promotion</strong>
+          <!-- Replace href with the client's profile link -->
+          <a href="#" class="client-handle" target="_blank" rel="noopener noreferrer">@denerzim</a>
+        </div>
+      </div>
+
+      <div class="project-text-block">
+        <p class="project-text">
+          Mr. Dener, a digital gaming influencer...
+          <span class="text-extra" hidden>
+            decided to launch a live stream and needed eye-catching creatives to promote it on his social media.
+          </span>
+          <button class="text-toggle" aria-expanded="false">more</button>
+        </p>
+        <p class="project-keywords">
+          <strong>Keywords:</strong> creatives, telegram, live, aviator, redbaron instagram
+        </p>
+      </div>
+
+      <!-- --------------------------------------------------------
+           MASONRY GALLERY (Pinterest-like, 2 columns)
+           
+           To add images:
+           - src       = path to thumbnail (smaller version for fast loading)
+           - data-full = path to full-size image (for the popup)
+           - data-ratio = image ratio: "1-1" | "9-16" | "4-5" | "vertical"
+           - alt       = image description (important for accessibility)
+      -------------------------------------------------------- -->
+      <div class="masonry-grid" role="list" aria-label="Project 1 image gallery">
+
+        <div class="masonry-item" data-ratio="1-1" role="listitem">
+          <img src="images/gallery/proj1-img1-thumb.jpg" data-full="images/gallery/proj1-img1.jpg" alt="Live promo creative — image 1" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img src="images/gallery/proj1-img2-thumb.jpg" data-full="images/gallery/proj1-img2.jpg" alt="Live promo creative — image 2" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img src="images/gallery/proj1-img3-thumb.jpg" data-full="images/gallery/proj1-img3.jpg" alt="Live promo creative — image 3" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="1-1" role="listitem">
+          <img src="images/gallery/proj1-img4-thumb.jpg" data-full="images/gallery/proj1-img4.jpg" alt="Live promo creative — image 4" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="vertical" role="listitem">
+          <img src="images/gallery/proj1-img5-thumb.jpg" data-full="images/gallery/proj1-img5.jpg" alt="Live promo creative — image 5" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img src="images/gallery/proj1-img6-thumb.jpg" data-full="images/gallery/proj1-img6.jpg" alt="Live promo creative — image 6" class="gallery-img" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------
+         PROJECT 2
+    ---------------------------------------------------------- -->
+    <section class="gallery-project" aria-labelledby="proj2-title">
+
+      <div class="gallery-project-header">
+        <img src="images/clients/client2.jpg" alt="Client avatar" class="client-avatar" width="40" height="40" loading="lazy" />
+        <div class="client-info">
+          <strong class="client-name" id="proj2-title">Creatives: Live Promotion</strong>
+          <a href="#" class="client-handle" target="_blank" rel="noopener noreferrer">@denerzim</a>
+        </div>
+      </div>
+
+      <div class="project-text-block">
+        <p class="project-text">
+          Mr. Feijão, owner of an auto parts store...
+          <span class="text-extra" hidden>
+            needed creatives for his social media promotion campaigns.
+          </span>
+          <button class="text-toggle" aria-expanded="false">more</button>
+        </p>
+        <p class="project-keywords">
+          <strong>Keywords:</strong> creatives, telegram, live, aviator, redbaron instagram
+        </p>
+      </div>
+
+      <div class="masonry-grid" role="list" aria-label="Project 2 image gallery">
+
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img src="images/gallery/proj2-img1-thumb.jpg" data-full="images/gallery/proj2-img1.jpg" alt="Project 2 creative — image 1" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="1-1" role="listitem">
+          <img src="images/gallery/proj2-img2-thumb.jpg" data-full="images/gallery/proj2-img2.jpg" alt="Project 2 creative — image 2" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img src="images/gallery/proj2-img3-thumb.jpg" data-full="images/gallery/proj2-img3.jpg" alt="Project 2 creative — image 3" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="1-1" role="listitem">
+          <img src="images/gallery/proj2-img4-thumb.jpg" data-full="images/gallery/proj2-img4.jpg" alt="Project 2 creative — image 4" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="vertical" role="listitem">
+          <img src="images/gallery/proj2-img5-thumb.jpg" data-full="images/gallery/proj2-img5.jpg" alt="Project 2 creative — image 5" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img src="images/gallery/proj2-img6-thumb.jpg" data-full="images/gallery/proj2-img6.jpg" alt="Project 2 creative — image 6" class="gallery-img" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <h2 class="footer-cta">
+      Ready to make your videos<br />much more engaging?
+    </h2>
+
+    <a href="#" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.105.549 4.082 1.515 5.797L.057 23.882a.5.5 0 0 0 .61.61l6.115-1.593A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.686-.513-5.223-1.41l-.374-.217-3.88 1.01 1.029-3.757-.234-.386A9.955 9.955 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+      Chat with me on WhatsApp
+    </a>
+
+    <p class="footer-note">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+      Usually replies fast
+    </p>
+
+    <p class="footer-copy">
+      &copy; <span id="ano-atual"></span> Alexandre Oliveira · All rights reserved
+    </p>
+  </footer>
+
+  <!-- Lightbox popup — hidden until an image is clicked -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close image">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/gallery.js"></script>
+
+</body>
+</html>

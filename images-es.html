@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis Imágenes — Alexandre Oliveira</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       BARRA DE IDIOMAS
+       Reemplaza cada href con la URL correcta de cada versión
+  ============================================================ -->
+  <nav class="lang-bar" aria-label="Selección de idioma">
+    <!-- Reemplaza href con la URL de la versión en inglés -->
+    <a href="images-en.html" class="lang-btn" lang="en">
+      <img src="images/flags/en.png" alt="English" class="flag" />
+      English
+    </a>
+    <!-- Español está activo en esta página -->
+    <a href="images-es.html" class="lang-btn lang-active" lang="es">
+      <img src="images/flags/es.png" alt="Español" class="flag" />
+      Español
+    </a>
+    <!-- Reemplaza href con la URL de la versión en portugués -->
+    <a href="images-pt.html" class="lang-btn" lang="pt">
+      <img src="images/flags/pt.png" alt="Português" class="flag" />
+      Português
+    </a>
+  </nav>
+
+  <div class="availability-badge">
+    <span class="availability-dot" aria-hidden="true"></span>
+    Disponible para nuevos proyectos
+  </div>
+
+  <header class="page-header">
+    <h1 class="page-title">Mis imágenes</h1>
+
+    <div class="profile-card">
+      <img
+        src="images/profile.jpg"
+        alt="Foto de Alexandre Oliveira"
+        class="profile-photo"
+        width="52"
+        height="52"
+        loading="lazy"
+      />
+      <div class="profile-info">
+        <strong class="profile-name">Alexandre Oliveira</strong>
+        <span class="profile-bio">Diseñador digital, Diseñador de Productos (UI), Web y editor de videos</span>
+      </div>
+      <a href="#" class="icon-btn" aria-label="Enviar mensaje">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ----------------------------------------------------------
+         PROYECTO 1
+         Reemplaza los datos a continuación:
+         - foto del cliente (src del avatar)
+         - nombre del cliente y @handle
+         - texto descriptivo
+         - palabras clave
+         - imágenes de la galería (src + data-full)
+    ---------------------------------------------------------- -->
+    <section class="gallery-project" aria-labelledby="proj1-titulo">
+
+      <div class="gallery-project-header">
+        <!-- Reemplaza src con el avatar del cliente -->
+        <img
+          src="images/clients/client1.jpg"
+          alt="Avatar del cliente"
+          class="client-avatar"
+          width="40"
+          height="40"
+          loading="lazy"
+        />
+        <div class="client-info">
+          <strong class="client-name" id="proj1-titulo">Creativos: Difusión de Live</strong>
+          <!-- Reemplaza href con el enlace al perfil del cliente -->
+          <a href="#" class="client-handle" target="_blank" rel="noopener noreferrer">@denerzim</a>
+        </div>
+      </div>
+
+      <div class="project-text-block">
+        <p class="project-text">
+          El Sr. Dener, un influencer digital de videojuegos...
+          <span class="text-extra" hidden>
+            decidió lanzar un live y necesitaba creativos llamativos para promocionarlo en sus redes sociales.
+          </span>
+          <button class="text-toggle" aria-expanded="false">más</button>
+        </p>
+        <p class="project-keywords">
+          <strong>Palabras clave:</strong> creativos, telegram, live, aviator, redbaron instagram
+        </p>
+      </div>
+
+      <!-- --------------------------------------------------------
+           GALERÍA MASONRY (estilo Pinterest, 2 columnas)
+           
+           Para agregar imágenes:
+           - src       = ruta de la miniatura (versión pequeña para carga rápida)
+           - data-full = ruta de la imagen completa (para el popup)
+           - data-ratio = proporción: "1-1" | "9-16" | "4-5" | "vertical"
+           - alt       = descripción de la imagen (importante para accesibilidad)
+      -------------------------------------------------------- -->
+      <div class="masonry-grid" role="list" aria-label="Galería de imágenes del proyecto 1">
+
+        <div class="masonry-item" data-ratio="1-1" role="listitem">
+          <img src="images/gallery/proj1-img1-thumb.jpg" data-full="images/gallery/proj1-img1.jpg" alt="Creativo live — imagen 1" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img src="images/gallery/proj1-img2-thumb.jpg" data-full="images/gallery/proj1-img2.jpg" alt="Creativo live — imagen 2" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img src="images/gallery/proj1-img3-thumb.jpg" data-full="images/gallery/proj1-img3.jpg" alt="Creativo live — imagen 3" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="1-1" role="listitem">
+          <img src="images/gallery/proj1-img4-thumb.jpg" data-full="images/gallery/proj1-img4.jpg" alt="Creativo live — imagen 4" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="vertical" role="listitem">
+          <img src="images/gallery/proj1-img5-thumb.jpg" data-full="images/gallery/proj1-img5.jpg" alt="Creativo live — imagen 5" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img src="images/gallery/proj1-img6-thumb.jpg" data-full="images/gallery/proj1-img6.jpg" alt="Creativo live — imagen 6" class="gallery-img" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------
+         PROYECTO 2
+    ---------------------------------------------------------- -->
+    <section class="gallery-project" aria-labelledby="proj2-titulo">
+
+      <div class="gallery-project-header">
+        <img src="images/clients/client2.jpg" alt="Avatar del cliente" class="client-avatar" width="40" height="40" loading="lazy" />
+        <div class="client-info">
+          <strong class="client-name" id="proj2-titulo">Creativos: Difusión de Live</strong>
+          <a href="#" class="client-handle" target="_blank" rel="noopener noreferrer">@denerzim</a>
+        </div>
+      </div>
+
+      <div class="project-text-block">
+        <p class="project-text">
+          El Sr. Feijão, dueño de una tienda de repuestos de autos...
+          <span class="text-extra" hidden>
+            necesitaba creativos para sus campañas de promoción en redes sociales.
+          </span>
+          <button class="text-toggle" aria-expanded="false">más</button>
+        </p>
+        <p class="project-keywords">
+          <strong>Palabras clave:</strong> creativos, telegram, live, aviator, redbaron instagram
+        </p>
+      </div>
+
+      <div class="masonry-grid" role="list" aria-label="Galería de imágenes del proyecto 2">
+
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img src="images/gallery/proj2-img1-thumb.jpg" data-full="images/gallery/proj2-img1.jpg" alt="Creativo proyecto 2 — imagen 1" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="1-1" role="listitem">
+          <img src="images/gallery/proj2-img2-thumb.jpg" data-full="images/gallery/proj2-img2.jpg" alt="Creativo proyecto 2 — imagen 2" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="9-16" role="listitem">
+          <img src="images/gallery/proj2-img3-thumb.jpg" data-full="images/gallery/proj2-img3.jpg" alt="Creativo proyecto 2 — imagen 3" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="1-1" role="listitem">
+          <img src="images/gallery/proj2-img4-thumb.jpg" data-full="images/gallery/proj2-img4.jpg" alt="Creativo proyecto 2 — imagen 4" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="vertical" role="listitem">
+          <img src="images/gallery/proj2-img5-thumb.jpg" data-full="images/gallery/proj2-img5.jpg" alt="Creativo proyecto 2 — imagen 5" class="gallery-img" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-ratio="4-5" role="listitem">
+          <img src="images/gallery/proj2-img6-thumb.jpg" data-full="images/gallery/proj2-img6.jpg" alt="Creativo proyecto 2 — imagen 6" class="gallery-img" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <h2 class="footer-cta">
+      ¿Listo para hacer tus videos<br />mucho más interesantes?
+    </h2>
+
+    <a href="#" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.105.549 4.082 1.515 5.797L.057 23.882a.5.5 0 0 0 .61.61l6.115-1.593A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.686-.513-5.223-1.41l-.374-.217-3.88 1.01 1.029-3.757-.234-.386A9.955 9.955 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+      Contáctame por WhatsApp
+    </a>
+
+    <p class="footer-note">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+      Generalmente responde rápido
+    </p>
+
+    <p class="footer-copy">
+      &copy; <span id="ano-atual"></span> Alexandre Oliveira · Todos los derechos reservados
+    </p>
+  </footer>
+
+  <!-- Lightbox popup — oculto hasta que se haga clic en una imagen -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes" hidden>
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+      <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/gallery.js"></script>
+
+</body>
+</html>
